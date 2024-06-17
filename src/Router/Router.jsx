@@ -9,6 +9,9 @@ import {
 import Main from "../layout/Main";
 import Home from "../pages/home/Home";
 import Menu from "../pages/home/shop/Menu";
+import Signup from "../components/Signup";
+import PrivateRouter from "../PrivateRouter/PrivateRouter";
+import UpdateProfile from "../pages/home/dashboard/UpdateProfile";
 
 
 const router = createBrowserRouter([
@@ -22,10 +25,18 @@ const router = createBrowserRouter([
         },
         {
           path:"/menu",
-          element:<Menu/>
+          element:<PrivateRouter><Menu/></PrivateRouter>
+        },
+        {
+          path:"/update-profile",
+          element:<UpdateProfile/>
         }
       ]
     },
+    {
+      path:"/signup",
+      element:<Signup/>
+    }
  
   ]);
   

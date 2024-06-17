@@ -1,24 +1,30 @@
-import React, {useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import logo from "../../public/Frame 1logo.png";
 import { FiPhoneCall } from "react-icons/fi";
-const Navbar = () => {
-  const [isSticky,setSticky]=useState(false);
-  useEffect(()=>{
-    const handleScroll=()=>{
-      const offset=window.scrollY;
-      if(offset>0){
-        setSticky(true)
-      }
-      else{
-        setSticky(false)
-      }
-    }
-    window.addEventListener("scroll",handleScroll);
-    return ()=>{
-    window.removeEventListener("scroll",handleScroll);
+import { FaUser } from "react-icons/fa";
+import Modal from "./Modal";
+import { AuthContext } from "../contexts/AuthProvider";
+import Profile from "./Profile";
 
-    }
-  },[])
+const Navbar = () => {
+  const [isSticky, setSticky] = useState(false);
+  const {user}=useContext(AuthContext);
+
+  console.log(user)
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      if (offset > 0) {
+        setSticky(true);
+      } else {
+        setSticky(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   const navItems = (
     <>
       <li>
@@ -63,7 +69,13 @@ const Navbar = () => {
   );
   return (
     <header className="max-w-screen-2xl container mx-auto fixed top-0 left-0 right-0 transition-all duration-300 ease-in-out">
-      <div className={`navbar py-0 xl:px-24 ${isSticky ? "shadow-md bg-base-100 transition-all duration-300 ease-in-out": ""}`}>
+      <div
+        className={`navbar py-0 xl:px-24 ${
+          isSticky
+            ? "shadow-md bg-base-100 transition-all duration-300 ease-in-out"
+            : ""
+        }`}
+      >
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -152,9 +164,17 @@ const Navbar = () => {
               <span class="badge badge-sm indicator-item">8</span>
             </div>
           </div>
-          <a className="btn bg-green rounded-full px-6 text-white flex items-center gap-2">
-            <FiPhoneCall /> Contact
-          </a>
+          {
+            user? <Profile user={user}/> :           
+            <button
+            className="btn bg-green rounded-full px-6 text-white flex items-center gap-2"
+            onClick={() => document.getElementById("my_modal_2").showModal()}
+          >
+            <FaUser /> Login
+          </button>
+          }
+
+          <Modal/>
         </div>
       </div>
     </header>
