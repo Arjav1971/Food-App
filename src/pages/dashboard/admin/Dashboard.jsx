@@ -241,7 +241,7 @@ const Dashboard = () => {
           </div>
         </div>
         
-        <div className="shadow-2xl flex gap-3 px-5 rounded-xl hover:shadow-lg transition-shadow duration-200 hidden 2xl:flex">
+        <div className="shadow-2xl  gap-3 px-5 rounded-xl hover:shadow-lg transition-shadow duration-200 hidden 2xl:flex">
           <div className="flex items-center justify-center py-5 px-2">
             <div className="rounded-full bg-[#EAEFFF] p-4 text-2xl text-[#2D60FF]">
               <MdOutlinePendingActions />
