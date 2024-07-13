@@ -8,7 +8,7 @@ const Footer = () => {
     <div className="section-container">
       <footer className="footer p-10 py-10 px-4 text-base-content">
         <aside>
-          <img src="../../public/logo.png" alt="" />
+          <img src="/logo.png" alt="" />
           <p className="my-4 md:w-40">
             Savor the artistry where every dish is a culinary masterpiece
           </p>
