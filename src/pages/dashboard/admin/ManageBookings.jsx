@@ -14,7 +14,7 @@ import { MdDelete } from "react-icons/md";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import { useQuery } from "@tanstack/react-query";
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import { SiTicktick } from "react-icons/si";
 const ManageBookings = () => {
   // const [menu, loading, refetch] = useMenu();
   // console.log("menu", menu);
@@ -154,7 +154,7 @@ const ManageBookings = () => {
                     className="btn btn-sm bg-orange-500 text-lg text-white"
 
                     >
-                      <CheckCircleOutlineIcon/>
+                      <SiTicktick/>
                     </button>
                   ) :(
                     <button
