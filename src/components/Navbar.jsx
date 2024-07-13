@@ -178,7 +178,7 @@ const Navbar = () => {
               <div
                 tabindex="0"
                 role="button"
-                class="btn btn-ghost btn-circle lg:flex hidden items-center justify-center"
+                class="btn btn-ghost btn-circle lg:flex  items-center justify-center"
               >
                 <div class="indicator">
                   <svg

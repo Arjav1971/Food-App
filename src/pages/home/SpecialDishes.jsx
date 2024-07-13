@@ -55,7 +55,9 @@ const SpecialDishes = () => {
             breakpoint: 480,
             settings: {
               slidesToShow: 1,
-              slidesToScroll: 1
+              slidesToScroll: 1,
+              initialSlide: 1
+
             }
           }
         ],
@@ -77,7 +79,7 @@ const SpecialDishes = () => {
       </div>
       <Slider ref={slider} {...settings} className='overflow-hidden mt-10 space-x-5'>
         {
-            // 2:17
+            
             recipes.map((item,index)=>(
                 <Cards key={index} item={item}/>
 
