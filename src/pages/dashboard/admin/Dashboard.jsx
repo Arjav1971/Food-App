@@ -241,7 +241,7 @@ const Dashboard = () => {
           </div>
         </div>
         
-        <div className="shadow-2xl  gap-3 px-5 rounded-xl hover:shadow-lg transition-shadow duration-200 hidden 2xl:flex">
+        {/* <div className="shadow-2xl  gap-3 px-5 rounded-xl hover:shadow-lg transition-shadow duration-200 hidden 2xl:flex">
           <div className="flex items-center justify-center py-5 px-2">
             <div className="rounded-full bg-[#EAEFFF] p-4 text-2xl text-[#2D60FF]">
               <MdOutlinePendingActions />
@@ -251,13 +251,13 @@ const Dashboard = () => {
             <div className="text-lg text-right opacity-60">Total Pending</div>
             <div className="text-2xl font-bold">125</div>
             <div className="flex mb-0">
-              <div className="ml-auto text-[#1EB564] flex items-center mt-4">
+              <div className="ml-auto text-[#1EB564] flex items-center mt-4 ">
                 <FaArrowUp />
                 <span>12.3%</span>
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="flex flex-col gap-10 md:flex-row">
         <div className="mt-10 shadow-2xl  p-4 rounded-xl hover:shadow-lg transition-shadow duration-200 md:w-1/2">
