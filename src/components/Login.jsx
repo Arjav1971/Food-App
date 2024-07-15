@@ -101,7 +101,12 @@ const Login = () => {
       <div className="modal-action flex flex-col justify-center mt-0 mb-4">
         {/* <p className="py-4">Press ESC key or click outside to close</p> */}
         <form className="card-body" method="dialog" onSubmit={handleSubmit(onSubmit)}>
-        <button htmlFor="my_modal_2" className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onClick={() => document.getElementById("my_modal_2").close()}>✕</button>
+        <Link
+            to="/"
+            className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+          >
+            ✕
+          </Link>
 
           <h3 className="font-bold text-lg">Please Login</h3>
 
