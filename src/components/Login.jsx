@@ -59,7 +59,8 @@ const Login = () => {
             alert("Login Succesfull")
             // document.getElementById("my_modal_2").close()
 
-            navigate(from,{replace:true})
+            navigate("/");
+
           })
           .catch((error) => {
             if (error.response) {
@@ -69,7 +70,9 @@ const Login = () => {
               } else if (error.response.status === 302) {
                 console.log("User already exists");
                 alert("Login Succesfull")
-                document.getElementById("my_modal_2").close()
+                navigate("/");
+
+                // document.getElementById("my_modal_2").close()
     
                 navigate(from,{replace:true})
               } else {
