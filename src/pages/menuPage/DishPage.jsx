@@ -12,8 +12,9 @@ const DishDetail = () => {
     fetch(`https://food-app-server-desi.onrender.com/menu/${id}`)
       .then((res) => res.json())
       .then((data) => setDish(data));
-  }, [id]);
 
+  }, [id]);
+console.log("logging",dish);
   const handleAddToCart = () => {
     if (user && user?.email) {
       const cartItem = {

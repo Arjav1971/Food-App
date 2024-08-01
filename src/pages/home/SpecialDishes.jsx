@@ -21,10 +21,26 @@ const SpecialDishes = () => {
     const [recipes,setRecipes]=useState([]);
     const slider=React.useRef(null)
     useEffect(()=>{
-        fetch("/menu.json").then(res=>res.json()).then(data=>{
-            const specials=data.filter((item)=>item.category==="popular")
-            setRecipes(specials)
-        })
+        // fetch("/menu.json").then(res=>res.json()).then(data=>{
+        //     const specials=data.filter((item)=>item.category==="popular")
+        //     setRecipes(specials)
+        // })
+
+        const fetchData = async () => {
+          try {
+            const response = await fetch("https://food-app-server-desi.onrender.com/menu");
+            const data = await response.json();
+            // setMenu(data);
+            // setFilteredItems(data);
+        
+            // Filter for specials
+            const specials = data.filter((item) => item.category === "popular");
+            setRecipes(specials);
+          } catch (error) {
+            console.log("Error fetching data", error);
+          }
+        };
+        fetchData();
     },[])
     const settings = {
         dots: true,
