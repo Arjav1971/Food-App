@@ -25,7 +25,7 @@ import ManageBookings from "../pages/dashboard/admin/ManageBookings";
 
 import UpdateMenu from "../pages/dashboard/admin/UpdateMenu";
 import Payment from "../pages/menuPage/Payment"
-
+import DishDetail from "../pages/menuPage/DishPage";
 
 const router = createBrowserRouter([
     {
@@ -55,6 +55,10 @@ const router = createBrowserRouter([
         {
           path:"/process-checkout",
           element:<Payment/>
+        },
+        {
+          path:"/menu/:id",
+          element:<DishDetail/>
         }
       ]
     },
